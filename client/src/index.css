@@ -44,3 +44,9 @@ body {
 footer {
   background-color: #0a331a;
 }
+
+@media screen and (min-width: 1024px) {
+  .banner-img {
+    height: 70vh;
+  }
+}
