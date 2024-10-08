@@ -1,86 +1,25 @@
-import wmsu_logo from "./assets/logo/Western_Mindanao_State_University.png";
-import he_logo from "./assets/logo/HE_Logo.png";
-
 import doctor from "./assets/doctor.png";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faEnvelope,
-  faPerson,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faPerson } from "@fortawesome/free-solid-svg-icons";
+
+import Banner from "./components/Banner";
+import NavLink from "./components/NavLink";
+import Button from "./components/Button";
+import StatisticsCard from "./components/StatisticsCard";
+import ServiceCard from "./components/ServiceCard";
+import RndCard from "./components/RndCard";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       {/* HEADER */}
       <header className="flex min-h-screen flex-col">
-        {/* BANNER */}
-        <div className="banner flex items-center justify-center gap-5 py-5 text-center">
-          <img src={wmsu_logo} alt="WMSU Logo" className="hidden sm:block" />
-          <div className="">
-            <p className="text-xs capitalize text-slate-100">
-              Western Mindanao State University
-            </p>
-            <p className="text-xs capitalize text-slate-100">
-              College of Home Economics
-            </p>
-            <p className="text-xs capitalize text-slate-100">
-              Department of Nutrition and Dietetics
-            </p>
-            <h2 className="text-lg font-medium uppercase lg:text-2xl">
-              Online Consultation Clinic
-            </h2>
-          </div>
-          <img src={he_logo} alt="HE Logo" className="hidden sm:block" />
-        </div>
+        {/* banner */}
+        <Banner />
 
         {/* NAV-LINK */}
-        <div className="container mx-auto p-5">
-          <div className="hidden items-center justify-between lg:flex">
-            <ul className="flex gap-5 text-lg">
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li>
-                <a href="#">Consultation</a>
-              </li>
-              <li>
-                <a href="#">Doctors</a>
-              </li>
-              <li>
-                <a href="#">Tools</a>
-              </li>
-              <li>
-                <a href="#">FAQ</a>
-              </li>
-              <li>
-                <a href="#">About Us</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
-              </li>
-            </ul>
-            <ul className="flex items-center gap-5">
-              <li>
-                <a href="#">Login</a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="btn inline-block rounded-md border px-5 py-3 font-medium uppercase"
-                >
-                  Book now
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="block rounded-md border p-5 text-end lg:hidden lg:border-none">
-            <FontAwesomeIcon icon={faBars} />
-          </div>
-        </div>
+        <NavLink />
 
         {/* MAIN */}
         <div className="container mx-auto flex flex-grow flex-col px-5 py-10 lg:py-0">
@@ -96,12 +35,7 @@ function App() {
                 dolores placeat?
               </p>
 
-              <a
-                href="#"
-                className="btn inline-block rounded-md border px-5 py-3 font-medium uppercase"
-              >
-                Book now
-              </a>
+              <Button>Book Now</Button>
             </div>
             {/*  */}
             <div className="image-parent flex items-center justify-center lg:w-1/2 lg:self-end">
@@ -118,22 +52,13 @@ function App() {
       {/* statistics */}
       <div className="statistics mx-auto flex flex-col items-center justify-center gap-5 px-5 py-20 sm:flex-row">
         {/* child */}
-        <div className="child flex flex-col items-center justify-center gap-2 rounded-md p-5 text-center">
-          <h2 className="text-5xl text-green-800">18</h2>
-          <h3 className="text-xs font-semibold uppercase">Instructor</h3>
-        </div>
+        <StatisticsCard value={20} label="Instructors" />
 
         {/* child */}
-        <div className="child flex flex-col items-center justify-center gap-2 rounded-md p-5 text-center">
-          <h2 className="text-5xl text-green-800">20</h2>
-          <h3 className="text-xs font-semibold uppercase">Patient</h3>
-        </div>
+        <StatisticsCard value={20} label="Patients" />
 
         {/* child */}
-        <div className="child flex flex-col items-center justify-center gap-2 rounded-md p-5 text-center">
-          <h2 className="text-5xl text-green-800">20</h2>
-          <h3 className="text-xs font-semibold uppercase">Activities</h3>
-        </div>
+        <StatisticsCard value={20} label="Activities" />
       </div>
 
       {/* Service - steps */}
@@ -144,43 +69,31 @@ function App() {
 
         <div className="flex flex-wrap justify-center gap-5">
           {/* child */}
-          <div className="child w-96 rounded-md bg-white p-5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-400 p-3">
-              <FontAwesomeIcon icon={faPerson} className="text-green-800" />
-            </div>
-            <h3 className="pb-2 pt-5 text-xl font-medium">APPOINT</h3>
-            <p className="text-slate-600">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <ServiceCard
+            icon={faPerson}
+            label={"Appointment"}
+            description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Distinctio corporis cum a ipsum odit minima aliquid nihil optio
-              aspernatur ipsam?
-            </p>
-          </div>
+              aspernatur ipsam?`}
+          />
 
           {/* child */}
-          <div className="child w-96 rounded-md bg-white p-5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-400 p-3">
-              <FontAwesomeIcon icon={faPerson} className="text-green-800" />
-            </div>
-            <h3 className="pb-2 pt-5 text-xl font-medium">APPOINT</h3>
-            <p className="text-slate-600">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <ServiceCard
+            icon={faPerson}
+            label={"Appointment"}
+            description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Distinctio corporis cum a ipsum odit minima aliquid nihil optio
-              aspernatur ipsam?
-            </p>
-          </div>
+              aspernatur ipsam?`}
+          />
 
           {/* child */}
-          <div className="child w-96 rounded-md bg-white p-5">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-400 p-3">
-              <FontAwesomeIcon icon={faPerson} className="text-green-800" />
-            </div>
-            <h3 className="pb-2 pt-5 text-xl font-medium">APPOINT</h3>
-            <p className="text-slate-600">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <ServiceCard
+            icon={faPerson}
+            label={"Appointment"}
+            description={`Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Distinctio corporis cum a ipsum odit minima aliquid nihil optio
-              aspernatur ipsam?
-            </p>
-          </div>
+              aspernatur ipsam?`}
+          />
         </div>
       </div>
 
@@ -248,47 +161,11 @@ function App() {
 
         <div className="flex flex-wrap justify-center gap-10">
           {/* child */}
-          <div className="child max-w-80 rounded-lg bg-white p-5 lg:max-w-96">
-            <div className="image-parent flex items-center justify-center rounded-lg bg-blue-200 px-3 pt-3">
-              <img src={doctor} alt="" />
-            </div>
-            <p className="mt-5 text-center">Rnd. Gregory Yames</p>
-          </div>
+          <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
           {/* child */}
-          <div className="child max-w-80 rounded-lg bg-white p-5 lg:max-w-96">
-            <div className="image-parent flex items-center justify-center rounded-lg bg-blue-200 px-3 pt-3">
-              <img src={doctor} alt="" />
-            </div>
-            <p className="mt-5 text-center">Rnd. Gregory Yames</p>
-          </div>
+          <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
           {/* child */}
-          <div className="child max-w-80 rounded-lg bg-white p-5 lg:max-w-96">
-            <div className="image-parent flex items-center justify-center rounded-lg bg-blue-200 px-3 pt-3">
-              <img src={doctor} alt="" />
-            </div>
-            <p className="mt-5 text-center">Rnd. Gregory Yames</p>
-          </div>
-          {/* child */}
-          <div className="child max-w-80 rounded-lg bg-white p-5 lg:max-w-96">
-            <div className="image-parent flex items-center justify-center rounded-lg bg-blue-200 px-3 pt-3">
-              <img src={doctor} alt="" />
-            </div>
-            <p className="mt-5 text-center">Rnd. Gregory Yames</p>
-          </div>
-          {/* child */}
-          <div className="child max-w-80 rounded-lg bg-white p-5 lg:max-w-96">
-            <div className="image-parent flex items-center justify-center rounded-lg bg-blue-200 px-3 pt-3">
-              <img src={doctor} alt="" />
-            </div>
-            <p className="mt-5 text-center">Rnd. Gregory Yames</p>
-          </div>
-          {/* child */}
-          <div className="child max-w-80 rounded-lg bg-white p-5 lg:max-w-96">
-            <div className="image-parent flex items-center justify-center rounded-lg bg-blue-200 px-3 pt-3">
-              <img src={doctor} alt="" />
-            </div>
-            <p className="mt-5 text-center">Rnd. Gregory Yames</p>
-          </div>
+          <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
         </div>
 
         <a
@@ -299,98 +176,7 @@ function App() {
         </a>
       </div>
 
-      {/* footer */}
-      <footer className="mx-auto px-5 py-20">
-        <div className="container mx-auto flex flex-col-reverse gap-10 md:flex-row md:justify-between">
-          {/*  */}
-          <div className="">
-            <h2 className="mb-5 text-lg font-medium uppercase text-white">
-              Stay in Touch
-            </h2>
-
-            <div className="flex flex-col gap-3">
-              {/* child */}
-              <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center rounded-md bg-white p-2">
-                  <FontAwesomeIcon icon={faPhone} />
-                </div>
-                <p className="text-gray-300">0997-297-6807</p>
-              </div>
-              {/* child */}
-              <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center rounded-md bg-white p-2">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </div>
-                <p className="text-gray-300">wmsuchedean@gmail.com</p>
-              </div>
-              {/* child */}
-              <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center rounded-md bg-white p-2">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </div>
-                <p className="text-gray-300">
-                  WMSU - College of Home Economics
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/*  */}
-          <div className="flex flex-col gap-5 sm:flex-row">
-            {/* child */}
-            <div className="">
-              <h2 className="mb-5 text-lg font-medium uppercase text-white">
-                Services
-              </h2>
-              <ul className="flex flex-col gap-2 capitalize text-gray-300">
-                <li>
-                  <a href="#">Services</a>
-                </li>
-                <li>
-                  <a href="#">Doctors</a>
-                </li>
-                <li>
-                  <a href="#">Articles</a>
-                </li>
-              </ul>
-            </div>
-            {/* child */}
-            <div className="">
-              <h2 className="mb-5 text-lg font-medium uppercase text-white">
-                About{" "}
-              </h2>
-              <ul className="flex flex-col gap-2 capitalize text-gray-300">
-                <li>
-                  <a href="#">Services</a>
-                </li>
-                <li>
-                  <a href="#">Doctors</a>
-                </li>
-                <li>
-                  <a href="#">Articles</a>
-                </li>
-              </ul>
-            </div>
-            {/* child */}
-            <div className="">
-              <h2 className="mb-5 text-lg font-medium uppercase text-white">
-                Legal{" "}
-              </h2>
-              <ul className="flex flex-col gap-2 capitalize text-gray-300">
-                <li>
-                  <a href="#">Services</a>
-                </li>
-                <li>
-                  <a href="#">Doctors</a>
-                </li>
-                <li>
-                  <a href="#">Articles</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
