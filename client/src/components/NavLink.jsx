@@ -8,7 +8,7 @@ export default function NavLink() {
         <div className="hidden items-center justify-between lg:flex">
           <ul className="flex gap-5 text-lg">
             <li>
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
               <a href="#">Consultation</a>

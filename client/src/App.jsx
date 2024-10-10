@@ -166,14 +166,17 @@ function App() {
           <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
           {/* child */}
           <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
+          {/* child */}
+          <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
+          {/* child */}
+          <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
+          {/* child */}
+          <RndCard img={doctor} alt={"tite"} name={"Gregory Yames"} />
         </div>
 
-        <a
-          href="#"
-          className="btn my-5 mt-10 inline-block rounded-md border px-5 py-3 font-medium uppercase"
-        >
-          See more
-        </a>
+        <div className="my-10 mt-20 text-center">
+          <Button>See more </Button>
+        </div>
       </div>
 
       <Footer />
