@@ -30,16 +30,21 @@ export default function NavLink() {
             </li>
           </ul>
           <ul className="flex items-center gap-5">
-            <li>
-              <a href="#">Login</a>
-            </li>
+            {/* login */}
             <li>
               <a
+                onClick={() =>
+                  document.getElementById("login_modal").showModal()
+                }
                 href="#"
-                className="btn inline-block rounded-md border px-5 py-3 font-medium uppercase"
               >
-                Book now
+                Login
               </a>
+            </li>
+
+            {/* btn - book now */}
+            <li>
+              <button className="btn">Book now</button>
             </li>
           </ul>
         </div>
@@ -47,6 +52,17 @@ export default function NavLink() {
           <FontAwesomeIcon icon={faBars} />
         </div>
       </div>
+
+      {/* modal  */}
+      <dialog id="login_modal" className="modal">
+        <div className="modal-box">
+          <h3 className="text-lg font-bold">Hello!</h3>
+          <p className="py-4">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </>
   );
 }

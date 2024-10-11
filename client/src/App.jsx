@@ -22,7 +22,7 @@ function App() {
         <NavLink />
 
         {/* MAIN */}
-        <div className="container mx-auto flex flex-grow flex-col px-5 py-10 lg:py-0">
+        <div className="container mx-auto flex flex-grow flex-col items-center justify-center px-5 py-10 lg:py-0">
           <div className="flex flex-col-reverse items-center gap-10 lg:flex-grow lg:flex-row lg:justify-between">
             {/*  */}
             <div className="lg:w-1/2">
